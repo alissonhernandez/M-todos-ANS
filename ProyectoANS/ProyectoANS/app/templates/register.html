@@ -3,7 +3,6 @@
 {% block content %}
 <div class="container">
     <h1>Crear Cuenta</h1>
-
     <form action="{% url 'register' %}" method="POST" class="form">
         {% csrf_token %}
         <label for="usuario">Nombre de usuario:</label>

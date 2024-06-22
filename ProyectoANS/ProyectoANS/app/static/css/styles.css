@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: rgba(104, 173, 252, 0.658);
     color: #333;
     display: flex;
     flex-direction: column;
@@ -68,6 +68,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 }
 
 h1 {
@@ -96,7 +97,7 @@ p {
     max-width: 400px;
     width: 100%;
     padding: 30px;
-    background: #c2c2c2; /* Fondo blanco del formulario */
+    background: #ffffff; /* Fondo blanco del formulario */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 20px;
@@ -151,3 +152,23 @@ p {
 .btn:hover {
     background-color: #13496d;
 }
+
+/* Estilos adicionales para el método de interpolación de Hermite */
+
+#resultados {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#resultados h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#resultados img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
