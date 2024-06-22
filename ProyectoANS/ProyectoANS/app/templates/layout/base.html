@@ -10,6 +10,7 @@
 <body>
     <nav>
         <ul>
+            <img src="{% static 'imgs/logo.png' %}" alt="Logo de Proyecto ANS" class="nav-logo">
             {% if user.is_authenticated %}
             <li><a href="{% url 'home' %}">Inicio</a></li>
             <li><a href="#">Perfil</a></li>

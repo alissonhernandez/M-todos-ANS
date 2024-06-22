@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #eef2f7;
+    background-color: #ffffff;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,14 @@ nav {
     padding: 15px 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta el espacio entre el logo y los elementos de la lista */
+}
+
+nav .nav-logo {
+    height: 50px;  /* Ajusta la altura según sea necesario */
+    margin-left: 20px;  /* Espacio entre el logo y la lista de navegación */
 }
 
 nav ul {
@@ -26,11 +34,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+    align-items: center;
+    flex: 1; /* Para que la lista ocupe el espacio restante */
 }
 
 nav li {
-    margin: 0 20px;
+    margin: 0 10px; /* Margen interior entre los elementos de la lista */
 }
 
 nav a {
@@ -42,18 +52,17 @@ nav a {
 
 nav a:hover {
     color: #3498db;
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 0 10px #008cff, 0 0 20px #008cff;
 }
+
 
 .container {
     max-width: 900px;
     width: 100%;
     margin: 30px auto;
     padding: 30px;
-    position: relative; /* Posición relativa para poder posicionar el contenido sobre la imagen de fondo */
-    overflow: hidden; /* Para que la imagen de fondo no se desborde del contenedor */
-    background-image: url('/static/imgs/fondo.avif'); /* Ruta a tu imagen de fondo */
-    background-size: cover; /* Para cubrir completamente el área del fondo */
-    background-position: center; /* Posición centrada del fondo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: flex;
@@ -62,10 +71,6 @@ nav a:hover {
 }
 
 h1 {
-    background: #fff;
-    border-radius: 8px;
-    margin-top: 20px;
-    padding: 10px;
     color: #2c3e50;
     text-align: center;
     margin-bottom: 25px;
@@ -91,7 +96,7 @@ p {
     max-width: 400px;
     width: 100%;
     padding: 30px;
-    background: #fff; /* Fondo blanco del formulario */
+    background: #c2c2c2; /* Fondo blanco del formulario */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 20px;
