@@ -1,0 +1,34 @@
+<!-- runge_kutta.html -->
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<h1>Método de Runge-Kutta para EDOs</h1>
+<p>Ingresa la información solicitada</p>
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
+<form method="POST" action="{% url 'runge_kutta' %}">
+    {% csrf_token %}
+    <label for="function">Función f(t, y):</label>
+    <input type="text" name="function" id="function" placeholder="ej. y - t**2 + 1" required>
+    
+    <label for="y0">Valor inicial y(0):</label>
+    <input type="number" name="y0" id="y0" step="any" required>
+    
+    <label for="t0">Valor inicial t:</label>
+    <input type="number" name="t0" id="t0" step="any" required>
+    
+    <label for="tn">Valor final t:</label>
+    <input type="number" name="tn" id="tn" step="any" required>
+    
+    <label for="h">Paso h:</label>
+    <input type="number" name="h" id="h" step="any" required>
+    
+    <button type="submit">Calcular</button>
+</form>
+
+{% if resultado %}
+<h2>Resultados</h2>
+<img src="data:image/png;base64,{{ img }}" alt="Gráfica de la solución">
+{% endif %}
+{% endblock %}
