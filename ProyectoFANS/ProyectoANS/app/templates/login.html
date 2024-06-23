@@ -3,7 +3,6 @@
 {% block content %}
 <h1>Inicio de Sesión</h1>
 
-<p>Ingresa la información solicitada</p>
 <p>{{ error }}</p>
 <form class="form" action="{% url 'login' %}" method="POST">
     {% csrf_token %}
@@ -11,8 +10,8 @@
     <input type="text" name="usuario" placeholder="Usuario" required>
     <label for="pwd">Contraseña:</label>
     <input type="password" name="pwd" placeholder="Contraseña" required>
-    <input type="submit" name="login" id="login" value="Acceder">
-    <p>No tiene una cuenta, vaya a <a href="{% url 'register' %}">crear cuenta</a> y acceda a todas las funciones de nuestra calculadora.</p>
+    <input type="submit" name="login" class="loginbtn" value="Acceder">
+    <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Registrate</a> y accede a todas las funciones de nuestra calculadora.</p>
 </form>
 
 
