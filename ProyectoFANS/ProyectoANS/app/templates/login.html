@@ -2,8 +2,6 @@
 
 {% block content %}
 <h1>Inicio de Sesión</h1>
-
-<p>{{ error }}</p>
 <form class="form" action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     <label for="usuario">Nombre de usuario:</label>

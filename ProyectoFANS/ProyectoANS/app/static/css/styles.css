@@ -22,12 +22,12 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ajusta el espacio entre el logo y los elementos de la lista */
+    justify-content: space-between; 
 }
 
 nav .nav-logo {
-    height: 50px;  /* Ajusta la altura según sea necesario */
-    margin-left: 20px;  /* Espacio entre el logo y la lista de navegación */
+    height: 50px;  
+    margin-left: 20px; 
 }
 
 nav ul {
@@ -35,13 +35,13 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+    justify-content: space-around; 
     align-items: center;
-    flex: 1; /* Para que la lista ocupe el espacio restante */
+    flex: 1; 
 }
 
 nav li {
-    margin: 0 10px; /* Margen interior entre los elementos de la lista */
+    margin: 0 10px; 
 }
 
 nav a {
@@ -93,21 +93,21 @@ p {
 }
 
 /* Estilos adicionales para el formulario */
+
 /*LOGIN*/
 .form {
     max-width: 400px;
     width: 100%;
     padding: 30px;
-    background: #ffffff; /* Fondo blanco del formulario */
+    background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-bottom: 10px;
     color: black;
     font-weight: bold;
     font-family:"Nunito", sans-serif;
-
- /* Color de texto para el formulario */
 }
+
 .form label[for=usuario] {
     display: block;
     margin-bottom: 8px;
@@ -143,26 +143,10 @@ p {
 .loginbtn:hover {
     background-color: #2980b9;
 }
-
-.btnperfil {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: red;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.btnperfil:hover {
-    background-color:brown;
-}
 /*TERMINA LOGIN*/
 
+
 /*REGISTRO*/
-
-
 .container-register{
     width: 100%;
     max-width: 800px;
@@ -177,22 +161,22 @@ p {
     max-width: 400px;
     width: 100%;
     padding: 30px;
-    background: #ffffff; /* Fondo blanco del formulario */
+    background: #ffffff;
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
-    color: black; /* Color de texto para el formulario */
+    color: black;
 }
 
 .registro{
     max-width: 400px;
     width: 100%;
     padding: 30px;
-    background: #ffffff; /* Fondo blanco del formulario */
+    background: #ffffff; 
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
-    color: black; /* Color de texto para el formulario */
+    color: black; 
 }
 
 .labels {
@@ -234,7 +218,27 @@ form label[for=usuario] {
     font-family:"Nunito", sans-serif;
 }
 
-/*TERMINAR REGISTRO*/
+.container-img img {
+    width: 100%; 
+    height: auto; 
+    margin-top: 20px; 
+}
+
+/* Estilos para el perfil */
+.btnperfil {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btnperfil:hover {
+    background-color:brown;
+}
 
 /* Estilos adicionales para el método de interpolación de Hermite */
 

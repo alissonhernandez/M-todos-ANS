@@ -1,29 +1,28 @@
 {% extends 'layout/base.html' %}
-
+{% load static %}
 {% block content %}
 <h1>Crear Cuenta</h1>
-<p>{{ error }}</p>
 <div class="container-register">
     <form class="registro" action="{% url 'register' %}" method="POST">
-    {% csrf_token %}
-        <label  class="labels" for="usuario">Nombre de usuario:</label>
-        <input class="inputsRegister" type="texts" name="usuario" placeholder="Usuario" required>
+        {% csrf_token %}
+        <label class="labels" for="usuario">Nombre de usuario:</label>
+        <input class="inputsRegister" type="text" name="usuario" placeholder="Usuario" required>
+        
         <label class="labels" for="email">Correo:</label>
-        <input class="inputsRegister" type="emails" name="email" placeholder="Email" required>
+        <input class="inputsRegister" type="email" name="email" placeholder="Email" required>
+        
         <label class="labels" for="pwd1">Contraseña:</label>
-        <input class="inputsRegister" type="passwords" name="pwd1" placeholder="Contraseña" required>
-        <label class="labels" for="pwd2"></label>
+        <input class="inputsRegister" type="password" name="pwd1" placeholder="Contraseña" required>
+        
+        <label class="labels" for="pwd2">Confirma tu contraseña:</label>
         <input class="inputsRegister" type="password" name="pwd2" placeholder="Confirma tu contraseña" required>
-        <input class="botonRegister" type="submit" name="register" id="register" value="Registarse">
-            
+        
+        <input class="botonRegister" type="submit" name="register" id="register" value="Registrarse">
     </form>
+    
     <div class="container-img">
-        <P>Bienvenido a una de las calculadoras que hacen posible lo imaginable
-    Escuchaste bien, esta calculadora es capaz de hacer los metodos de Hitman y Runge-kutta
-        </P>
+        <p>Bienvenido a una de las calculadoras que hacen posible lo imaginable. Escuchaste bien, esta calculadora es capaz de hacer los métodos de Hermite y Runge-Kutta.</p>
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
     </div>
-
 </div>
-
-
 {% endblock %}
