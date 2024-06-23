@@ -1,0 +1,173 @@
+/* Estilos generales */
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(104, 173, 252, 0.658);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajusta el espacio entre el logo y los elementos de la lista */
+}
+
+nav .nav-logo {
+    height: 50px;  /* Ajusta la altura según sea necesario */
+    margin-left: 20px;  /* Espacio entre el logo y la lista de navegación */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+    align-items: center;
+    flex: 1; /* Para que la lista ocupe el espacio restante */
+}
+
+nav li {
+    margin: 0 10px; /* Margen interior entre los elementos de la lista */
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 0 10px #008cff, 0 0 20px #008cff;
+}
+
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.content {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+/* Estilos adicionales para el formulario */
+
+.form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #ffffff; /* Fondo blanco del formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333; /* Color de texto para el formulario */
+}
+
+.form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form button[type="submit"] {
+    width: 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.form button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #13496d;
+}
+
+/* Estilos adicionales para el método de interpolación de Hermite */
+
+#resultados {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#resultados h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#resultados img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

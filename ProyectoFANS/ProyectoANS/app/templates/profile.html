@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Perfil de Usuario</h1>
+    <div class="profile-info">
+        <p><strong>Nombre de usuario:</strong> {{ usuario.username }}</p>
+        <p><strong>Correo electrónico:</strong> {{ usuario.email }}</p>
+        <!-- Puedes añadir más información del perfil según tus necesidades -->
+    </div>
+
+    <a href="{% url 'logout' %}" class="btn">Cerrar Sesión</a>
+    <!-- Enlace para cerrar sesión, ajusta la URL según tu aplicación -->
+</div>
+{% endblock %}
