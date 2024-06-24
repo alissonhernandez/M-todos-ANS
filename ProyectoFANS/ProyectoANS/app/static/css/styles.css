@@ -112,7 +112,7 @@ p {
 .form label[for=usuario] {
     display: block;
     margin-bottom: 8px;
-    color: black;
+    color: #555;
 }
 
 .form input[type="text"],
@@ -260,6 +260,34 @@ form label[for=usuario] {
     background-color: #1c577e;
 }
 
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+table tr:first-child th {
+    background-color: lightblue; 
+}
+
 
 /* Estilos adicionales para el método de interpolación de Hermite */
 
@@ -279,6 +307,55 @@ form label[for=usuario] {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo para Runge-Kutta */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form label {
+    flex: 0 0 30%;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+form input[type="text2"],
+form input[type="number"],
+form input[type="submit"] {
+    flex: 0 0 60%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    flex: 0 0 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1c577e;
+}
+
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {

@@ -6,7 +6,7 @@
 <div class="container-register">
     <form class="registro" action="{% url 'register' %}" method="POST">
         {% csrf_token %}
-        <label class="labels" for="usuario">Nombre de usuario:</label>
+        <label class="labels" for="usuario">Usuario:</label>
         <input class="inputsRegister" type="text" name="usuario" placeholder="Usuario" required>
         
         <label class="labels" for="email">Correo:</label>
@@ -15,7 +15,7 @@
         <label class="labels" for="pwd1">Contraseña:</label>
         <input class="inputsRegister" type="password" name="pwd1" placeholder="Contraseña" required>
         
-        <label class="labels" for="pwd2">Confirma tu contraseña:</label>
+        <label class="labels" for="pwd2">Confirmar:</label>
         <input class="inputsRegister" type="password" name="pwd2" placeholder="Confirma tu contraseña" required>
         
         <input class="botonRegister" type="submit" name="register" id="register" value="Registrarse">
