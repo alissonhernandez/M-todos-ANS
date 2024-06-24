@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+    <title>Proyecto ANS</title>
+</head>
+<body>
+    <nav>
+        <img src="{% static 'img/logo.png' %}" alt="Logo" class="nav-logo">
+        <ul>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'profile' %}">Perfil</a></li>
+            <li><a href="{% url 'hermite' %}">Hermite</a></li>
+            <li><a href="{% url 'runge_kutta' %}">Runge-kutta</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="{% url 'logout' %}">Salir</a></li>
+            {% else %}
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'login' %}">Acceder</a></li>
+            <li><a href="{% url 'hermite' %}">Hermite</a></li>
+            <li><a href="{% url 'runge_kutta' %}">Runge-kutta</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/main.js' %}" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>

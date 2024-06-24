@@ -1,0 +1,91 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Método de Runge Kutta para EDOS</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="fx">f(x)</label>
+    <input type="text2" name="fx" id="fx" required>
+    <label for="x0">x0</label>
+    <input type="number" name="x0" id="x0" required>
+    <label for="y0">y0</label>
+    <input type="number" name="y0" id="y0" required>
+    <label for="aprox">Aproximacion y(?)</label>
+    <input type="number" name="aprox" id="aprox" step="any" required>
+    <label for="h">h</label>
+    <input type="number" name="h" id="h" step="any" required>
+    <input type="submit" name="calc" id="calc" value="Calcular">
+</form>
+
+<div id="resultados">
+    {% if resultado %}
+        <h2>Resultados</h2>
+        {% if img %}
+            <img src="data:image/png;base64,{{ img }}" alt="Gráfica de la función">
+        {% endif %}
+        <h3>Los resultados tabulados son los siguientes: </h3>
+        {{df_rk|safe}}
+        {% if user.is_authenticated %}
+            <h4>Para calcular los resultados, hacemos uso de las siguientes fórmulas:</h4>
+            <p>
+                $$ y_{n+1} = y_n + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right) $$
+            </p>
+            <p>Donde:</p>
+            <p>
+                $$ k_1 = f(x_n, y_n) $$
+            </p>
+            <p>
+                $$ k_2 = f \left( x_n + \frac{h}{2}, y_n + \frac{h}{2} k_1 \right) $$
+            </p>
+            <p>
+                $$ k_3 = f \left( x_n + \frac{h}{2}, y_n + \frac{h}{2} k_2 \right) $$
+            </p>
+            <p>
+                $$ k_4 = f \left( x_n + h, y_n + h k_3 \right) $$
+            </p>
+
+            <p>Y f(x) es la función dada, es decir:</p>
+            <p>$$ {{ fx_latex }} $$</p>
+
+            <h3>Resultados</h3>
+            {% for row in df %}
+                {% if forloop.counter0 == 0 %}
+                    <p>Comenzamos a calcular los valores, para éste caso, Xi, Yi serán los valores que han sido ingresados</p>
+                    <p> Xi = {{row.Xi}}  </p>
+                    <p> Yi = {{row.Yi}}  </p>
+                    <p>Para calcular el valor de Ki, solo sustituimos los valores en la formulas anteriores y evaluamos en la funcion, de la siguiente manera:</p>
+                    <p>$$ k_1 = f({{row.Xi}}, {{row.Yi}}) = {{row.k1}} $$</p>
+                    <p>$$ k_2 = f \left( {{row.Xi}} + \frac{ {{h}} }{2}, {{row.Yi}} + \frac{ {{h}} }{2} {{row.k1}} \right) =  {{row.k2}} $$</p>
+                    <p>$$ k_3 = f \left( {{row.Xi}} + \frac{ {{h}} }{2}, {{row.Yi}} + \frac{ {{h}} }{2} {{row.k2}} \right) =  {{row.k3}} $$</p>
+                    <p>$$ k_4 = f \left( {{row.Xi}} + {{h}} , {{row.Yi}} + {{h}} {{row.k3}} \right) =  {{row.k4}} $$</p>
+                {% else %}
+                    <p>Calculamos el nuevo Xi de la siguiente manera</p>
+                    <p> $$ X_{i} = X_{i-1} + h $$</p>
+                    <p>Sustituyendo tenemos: </p>
+                    <p>$$ X_{ {{ forloop.counter0 }}} = {{ row.Xim1 }} + {{h}} = {{ row.Xi }} $$</p>
+                    <p>Mientras que el valor de Yi será el valor anterior de Yi+1:</p>
+                    <p> $$ Y_{i} = Y_{i-1} $$</p>
+                    <p>Sustituyendo tenemos: </p>
+                    <p>$$ Y_{ {{ forloop.counter0 }} +1} = {{ row.Yip1 }} $$</p>
+                    <p> Xi = {{row.Xi}}  </p>
+                    <p> Yi = {{row.Yi}}  </p>
+                    <p>Para calcular el valor de Ki, solo sustituimos los valores en la formulas anteriores y evaluamos en la funcion, de la siguiente manera:</p>
+                    <p>$$ k_1 = f({{row.Xi}}, {{row.Yi}}) = {{row.k1}} $$</p>
+                    <p>$$ k_2 = f \left( {{row.Xi}} + \frac{ {{h}} }{2}, {{row.Yi}} + \frac{ {{h}} }{2} {{row.k1}} \right) =  {{row.k2}} $$</p>
+                    <p>$$ k_3 = f \left( {{row.Xi}} + \frac{ {{h}} }{2}, {{row.Yi}} + \frac{ {{h}} }{2} {{row.k2}} \right) =  {{row.k3}} $$</p>
+                    <p>$$ k_4 = f \left( {{row.Xi}} + {{h}} , {{row.Yi}} + {{h}} {{row.k3}} \right) =  {{row.k4}} $$</p>
+                {% endif %}
+                {% if forloop.last %}
+                    <p>Con los valores de Ki, calculamos el valor de Yi+1 de la siguiente manera:</p>
+                    <p>$$ Y_{i+1} = Y_{i} + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right) $$</p>
+                    <p>$$ Y_{i+1} = {{row.Yi}} + \frac{ {{h}} }{6} \left( {{row.k1}} + 2 {{row.k2}} + 2 {{row.k3}} + {{row.k1}} \right) $$</p>
+                    <p>$$ Y_{ {{ forloop.counter0 }} +1} = {{ row.Yip1 }} $$</p>
+                {% endif %}
+            {% endfor %}
+        {% endif %} 
+    {% endif %}
+</div>
+  
+</div>  
+{% endblock %}
