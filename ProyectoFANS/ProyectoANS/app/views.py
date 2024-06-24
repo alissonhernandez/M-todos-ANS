@@ -7,15 +7,13 @@ import sympy as sp
 from .hermite import *
 from .runge_kutta import *
 import pandas as pd
-# Importa la funcion latex de sympy
+from .models import ExerciseHistory
 from sympy import symbols, sqrt, sin, cos, tan, exp, pi, E, latex
-
 
 @login_required
 def view_profile(request):
     return render(request, 'profile.html', {'usuario': request.user})
 
-# Create your views here.
 def home(request):
     return render(request, 'home.html')
 
@@ -32,7 +30,6 @@ def user_login(request):
             return render(request, 'login.html', {'error': 'Usuario o contraseña incorrectos.'})
     else:
         return render(request, 'login.html')
-        
 
 def user_register(request):
     if request.method == 'POST':
@@ -58,6 +55,7 @@ def user_logout(request):
     logout(request)
     return redirect('home')
 
+@login_required
 def hermite(request):
     if request.method == 'POST':
         cantidad_puntos = int(request.POST.get('cantidad_puntos'))
@@ -74,6 +72,15 @@ def hermite(request):
         df_hermite.insert(0, 'X', z)
         df_txt.insert(0, 'X', z)
         img = graficar_hermite(datos_x, datos_fx, pol)
+
+        # Guardar en el historial
+        ExerciseHistory.objects.create(
+            user=request.user,
+            exercise_type='hermite',
+            input_data=f'x: {datos_x}, fx: {datos_fx}, fdx: {datos_fdx}',
+            result=f'polinomio: {pol}, pasos: {pasos}, df_hermite: {df_hermite.to_html()}, df_txt: {df_txt.to_html()}'
+        )
+
         return render(request, 'hermite.html', {
             'resultado': True, 
             'img': img, 
@@ -87,6 +94,7 @@ def hermite(request):
     else:
         return render(request, 'hermite.html')
 
+@login_required
 def runge_kutta(request):
     if request.method == 'POST':
         fx = request.POST.get('fx')
@@ -130,6 +138,15 @@ def runge_kutta(request):
         # Convierte el DataFrame a un diccionario de registros
         df = df.to_dict('records') # Convierte el DataFrame a un diccionario de registros
         fx_latex = latex(fx)
+
+        # Guardar en el historial
+        ExerciseHistory.objects.create(
+            user=request.user,
+            exercise_type='runge_kutta',
+            input_data=f'fx: {fx}, x0: {x0}, y0: {y0}, h: {h}, aprox: {aprox}',
+            result=f'df_rk: {df_rk.to_html()}, df: {df}, fx_latex: {fx_latex}'
+        )
+
         # Retorna el DataFrame con los resultados y la imagen de la gráfica
         return render(request, 'runge_kutta.html', {
             'resultado': True,
@@ -141,3 +158,7 @@ def runge_kutta(request):
         })
     else:
         return render(request, 'runge_kutta.html')
+@login_required
+def view_history(request):
+    history = ExerciseHistory.objects.filter(user=request.user).order_by('-created_at')
+    return render(request, 'history.html', {'history': history})
