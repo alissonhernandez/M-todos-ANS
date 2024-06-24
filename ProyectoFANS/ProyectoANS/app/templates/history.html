@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<h2>Historial de Ejercicios</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Tipo de Ejercicio</th>
+            <th>Fecha</th>
+            <th>Datos de Entrada</th>
+            <th>Resultado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in history %}
+        <tr>
+            <td>{{ item.exercise_type }}</td>
+            <td>{{ item.created_at }}</td>
+            <td>{{ item.input_data }}</td>
+            <td>{{ item.result }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
