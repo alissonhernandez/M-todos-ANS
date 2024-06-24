@@ -382,7 +382,6 @@ form input[type="submit"]:hover {
     background-color: #1c577e;
 }
 
-
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     nav ul {
