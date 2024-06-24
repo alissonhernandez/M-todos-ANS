@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Perfil de Usuario</h1>
+    <div class="profile-info">
+        <img src="{% static 'img/perfil.png' %}" alt="Foto" class="profile-img">
+        <div class="profile-details">
+            <p><strong>Nombre de usuario:</strong> {{ usuario.username }}</p>
+            <p><strong>Correo electrónico:</strong> {{ usuario.email }}</p>
+        </div>
+    </div>
+    <a href="{% url 'logout' %}" class="btnperfil">Cerrar Sesión</a>
+</div>
+{% endblock %}

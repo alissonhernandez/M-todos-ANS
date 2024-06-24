@@ -1,0 +1,418 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: "Nunito", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(104, 173, 252, 0.658);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav .nav-logo {
+    height: 50px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 0 10px #008cff, 0 0 20px #008cff;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+.content {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+/* Estilos adicionales para el formulario */
+
+/*LOGIN*/
+.form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    font-family: "Nunito", sans-serif;
+}
+
+.form label[for=usuario] {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: "Nunito", sans-serif;
+}
+
+.loginbtn {
+    width: 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    font-family: "Nunito", sans-serif;
+}
+
+.loginbtn:hover {
+    background-color: #1c577e;
+}
+/*TERMINA LOGIN*/
+
+/*REGISTRO*/
+.container-register {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+}
+
+.container-img {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.registro {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.labels {
+    display: block;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.botonRegister {
+    width: 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    font-family: "Nunito", sans-serif;
+}
+
+.botonRegister:hover {
+    background-color: #1c577e;
+}
+
+form label[for=usuario] {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.inputsRegister {
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: "Nunito", sans-serif;
+}
+
+.container-img img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Estilos para el perfil */
+
+.profile-info {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 150px;  
+    height: 150px; 
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover; 
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnperfil {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btnperfil:hover {
+    background-color: #1c577e;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+table tr:first-child th {
+    background-color: lightblue; 
+}
+
+
+/* Estilos adicionales para el método de interpolación de Hermite */
+
+#resultados {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#resultados h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#resultados img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para Runge-Kutta */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form label {
+    flex: 0 0 30%;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+form input[type="text2"],
+form input[type="number"],
+form input[type="submit"] {
+    flex: 0 0 60%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    flex: 0 0 100%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1c577e;
+}
+
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .container-register {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-img, .registro {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    nav .nav-logo {
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    nav ul {
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .form input[type="text"],
+    .form input[type="email"],
+    .form input[type="password"],
+    .inputsRegister {
+        padding: 8px;
+    }
+
+    .loginbtn, .botonRegister {
+        font-size: 1em;
+        padding: 8px;
+    }
+}
