@@ -291,36 +291,62 @@ table tr:first-child th {
 
 /* Estilos adicionales para el método de interpolación de Hermite */
 
+
+/* Estilos para el título principal */
+.container h1 {
+    color: #4285f4;
+}
+
+/* Estilos para las etiquetas de formulario */
+label {
+    color: #4285f4;
+}
+
+/* Estilos para los inputs de formulario */
+input[type="number"] {
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos para el botón de formulario */
+button[type="submit"] {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Estilos para los resultados */
 #resultados {
-    margin-top: 30px;
-    text-align: center;
-}
-
-#resultados h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-#resultados img {
-    max-width: 100%;
     margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilos para los títulos de resultados */
+#resultados h2 {
+    color: #4285f4;
+}
+
+/* Estilos para el texto dentro de resultados */
+#resultados p {
+    color: #333;
+}
+
+/* Estilos para la lista de pasos */
+#resultados ul {
+    margin-top: 10px;
+}
+
+/* Estilos para los elementos de la lista de pasos */
+#resultados li {
+    /* Puedes añadir estilos adicionales según sea necesario */
+}
+
 
 /* Estilo para Runge-Kutta */
 
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 form label {
     flex: 0 0 30%;
