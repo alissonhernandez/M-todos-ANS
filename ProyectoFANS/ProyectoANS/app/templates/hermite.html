@@ -1,39 +1,39 @@
 {% extends 'layout/base.html' %}
 
 {% block content %}
-<h1>Método de Interpolación de Hermite</h1>
-<form>
-    <label for="cantidad-puntos">Ingrese la cantidad de puntos</label>
-    <input type="number" name="cantidad-puntos" id="cantidad-puntos" required>
-    <button type="submit" id="btn-cantidad-puntos">Enviar</button>
-</form>
+<div class="container">
+    <h1>Método de Interpolación de Hermite</h1>
+    <form id="form-cantidad-puntos">
+        <label for="cantidad-puntos">Ingrese la cantidad de puntos</label>
+        <input type="number" name="cantidad-puntos" id="cantidad-puntos" required>
+        <button type="submit" id="btn-cantidad-puntos">Enviar</button>
+    </form>
 
-<form id="puntos" action="{% url 'hermite' %}" method="POST">
-    {% csrf_token %}
-    <p id="p-instrucciones"></p>
-</form>
+    <form id="puntos" action="{% url 'hermite' %}" method="POST">
+        {% csrf_token %}
+        <p id="p-instrucciones"></p>
+    </form>
 
-<div id="resultados">
-    {% if resultado %}
-        <h2>Resultados</h2>
-        {% if img %}
-            <img src="data:image/png;base64,{{ img }}" alt="Gráfica de la función">
+    <div id="resultados">
+        {% if resultado %}
+            <h2>Resultados</h2>
+            {% if img %}
+                <img src="data:image/png;base64,{{ img }}" alt="Gráfica de la función">
+            {% endif %}
+            {% if user.is_authenticated %}
+                {{ df_txt|safe }}
+                <p>Polinomio de Hermite: {{ polinomio }}</p>
+                <h3>Pasos para encontrar el polinomio:</h3>
+                <ul>
+                    {% for paso in pasos %}
+                        <li>{{ paso|safe }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                {{ df_hermite|safe }}
+                <p>Polinomio de Hermite: {{ polinomio }}</p>
+            {% endif %}
         {% endif %}
-        {% if user.is_authenticated %}
-        {{ df_txt|safe }}
-        <p>Polinomio de Hermite: {{ polinomio }}</p>
-        <h3>Pasos para encontrar el polinomio:</h3>
-        <ul>
-            {% for paso in pasos %}
-                <li>{{ paso|safe }}</li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        {{ df_hermite|safe }}
-        <p>Polinomio de Hermite: {{ polinomio }}</p>
-        {% endif %}
-        
-    {% endif %}
+    </div>
 </div>
-
 {% endblock %}

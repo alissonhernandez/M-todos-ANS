@@ -225,13 +225,33 @@ form label[for=usuario] {
 }
 
 /* Estilos para el perfil */
+
+.profile-info {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 150px;  
+    height: 150px; 
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover; 
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
 .btnperfil {
     display: inline-block;
     padding: 10px 20px;
     background-color: #3498db;
     color: #fff;
     text-decoration: none;
-    margin-right: 10px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
@@ -239,6 +259,7 @@ form label[for=usuario] {
 .btnperfil:hover {
     background-color: #1c577e;
 }
+
 
 /* Estilos adicionales para el método de interpolación de Hermite */
 
